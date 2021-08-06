@@ -1,0 +1,9 @@
+[flake8]
+max-line-length = 88
+ignore = W601, C901, E129, W503, E231
+exclude =
+    .git,
+    __pycache__,
+    __init__.py,
+    migrations
+max-complexity = 10
