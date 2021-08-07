@@ -20,5 +20,7 @@ def get_apps_urls() -> list:
 
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-] + get_apps_urls()
+    path("api/", include([
+        path("admin/", admin.site.urls),
+    ] + get_apps_urls()))
+]
