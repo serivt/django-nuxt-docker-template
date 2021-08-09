@@ -1,50 +1,50 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
-      <v-card class="logo py-4 d-flex justify-center">
-        <NuxtLogo />
-        <VuetifyLogo />
-      </v-card>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
+      <v-card flat outlined>
+        <v-card-title class="headline text-center d-block">
+          Welcome to the Django + Nuxt.js + Docker template
         </v-card-title>
         <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
           <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
+            A Django + Nuxt project template (with Vuetify as the UI component
+            framework) using Docker. This template has a basic authentication
+            system that uses JWT and a
+            <NuxtLink to="/private">private page</NuxtLink> to test it, you need
+            to
+            <a
+              href="https://github.com/serivt/django-nuxt-docker-template/README.md"
+              target="_blank"
+              >create a Django user</a
+            >
+            to login.
+          </p>
+          <p>
+            For more information on this template, check out the
+            <a
+              href="https://github.com/serivt/django-nuxt-docker-template/README.md"
               target="_blank"
               rel="noopener noreferrer"
             >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
+              README.md</a
             >
-              discord
-            </a>.
+            on github.
           </p>
           <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
+            Find a bug? Report it on the github
+            <a
+              href="https://github.com/serivt/django-nuxt-docker-template/issues"
               target="_blank"
               rel="noopener noreferrer"
               title="contribute"
             >
-              issue board
-            </a>.
+              issue board </a
+            >.
           </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
           <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+            <em><small>&mdash; Sergio Torrado</small></em>
           </div>
-          <hr class="my-3">
+          <hr class="my-3" />
           <a
             href="https://nuxtjs.org/"
             target="_blank"
@@ -52,7 +52,7 @@
           >
             Nuxt Documentation
           </a>
-          <br>
+          <br />
           <a
             href="https://github.com/nuxt/nuxt.js"
             target="_blank"
@@ -60,18 +60,38 @@
           >
             Nuxt GitHub
           </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
+          <br />
+          <a
+            href="https://vuetifyjs.com"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Continue
-          </v-btn>
-        </v-card-actions>
+            Vuetify Documentation
+          </a>
+          <br />
+          <a
+            href="https://chat.vuetifyjs.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vuetify Discord
+          </a>
+          <br />
+          <a
+            href="https://github.com/vuetifyjs/vuetify/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vuetify GitHub
+          </a>
+        </v-card-text>
       </v-card>
     </v-col>
   </v-row>
 </template>
+
+<script>
+export default {
+  auth: 'guest',
+}
+</script>

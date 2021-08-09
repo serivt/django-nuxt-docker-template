@@ -11,6 +11,10 @@ ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOST")
 
 DATABASES = {"default": env.db("DJANGO_DATABASE_URL")}
 
-DATABASES["default"]["ATOMIC_REQUESTS"] = env.bool("DJANGO_ATOMIC_REQUESTS", default=False)
+DATABASES["default"]["ATOMIC_REQUESTS"] = env.bool(
+    "DJANGO_ATOMIC_REQUESTS", default=False
+)
 
-DATABASES["default"]["CONN_MAX_AGE"] = env.int("DJANGO_DATABASE_CONN_MAX_AGE", default=0)
+DATABASES["default"]["CONN_MAX_AGE"] = env.int(
+    "DJANGO_DATABASE_CONN_MAX_AGE", default=0
+)

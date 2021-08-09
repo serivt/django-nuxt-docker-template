@@ -5,6 +5,9 @@ export default {
     port: 3300,
     host: '0.0.0.0'
   },
+  router: {
+    middleware: ['auth']
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - frontend',
@@ -46,31 +49,55 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
-
+  axios: {
+    baseURL: 'http://backend:8000/api/',
+    browserBaseURL: 'http://127.0.0.1:8800/api/',
+  },
+  auth: {
+    token: {
+      prefix: '_token.',
+      global: true,
+    },
+    redirect: {
+      login: '/auth/login',
+      home: '/'
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'access',
+          global: true,
+        },
+        user: {
+          property: false,
+        },
+        endpoints: {
+          login: { url: '/users/login/', method: 'post' },
+          user: { url: '/users/me/', method: 'get' },
+          logout: false
+        }
+      }
+    }
+  },
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
+      dark: false,
     }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    babel:{
+      plugins: [
+        ['@babel/plugin-proposal-private-methods', { loose: true }],
+        ['@babel/plugin-proposal-private-property-in-object', { loose: true }]
+      ]
+    }
   }
 }

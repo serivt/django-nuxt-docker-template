@@ -10,10 +10,17 @@ django==3.2.4
     # via
     #   -r requirements.in
     #   djangorestframework
+    #   djangorestframework-simplejwt
 django-environ==0.4.5
     # via -r requirements.in
 djangorestframework==3.12.4
+    # via
+    #   -r requirements.in
+    #   djangorestframework-simplejwt
+djangorestframework-simplejwt==4.7.2
     # via -r requirements.in
+pyjwt==2.1.0
+    # via djangorestframework-simplejwt
 pytz==2021.1
     # via django
 sqlparse==0.4.1
