@@ -1,11 +1,11 @@
 """URL Configuration """
 import os
 
+from config.utils import get_apps_names
+
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
-
-from config.utils import get_apps_names
 
 
 def get_apps_urls() -> list:
