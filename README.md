@@ -45,7 +45,20 @@ GET /api/users/me/
 ```
 
 ## Environment variables
-Coming soon...
+* DJANGO_REDIS_URL _(type: string, default: None)_ If its set, it will be used for [caches](https://docs.djangoproject.com/en/3.2/ref/settings/#caches).
+* [DJANGO_DEBUG](https://docs.djangoproject.com/en/3.2/ref/settings/#std:setting-DEBUG) _(type: boolean, default: {production: False, development: True})_
+
+### Only production environment
+* [DJANGO_SECRET_KEY](https://docs.djangoproject.com/en/3.2/ref/settings/#std:setting-SECRET_KEY) _(type: string, required)_
+* [DJANGO_ALLOWED_HOST](https://docs.djangoproject.com/en/3.2/ref/settings/#allowed-hosts) _(type: list, required)_
+* [DJANGO_DATABASE_URL](https://github.com/jacobian/dj-database-url#url-schema) _(type: string, required)_
+* [DJANGO_ATOMIC_REQUESTS](https://docs.djangoproject.com/en/3.2/ref/settings/#atomic-requests) _(type: boolean, default: False)_
+* [DJANGO_CONN_MAX_AGE](https://docs.djangoproject.com/en/3.2/ref/settings/#conn-max-age) _(type: integer, default: 0)_
+* [DJANGO_HTTP_X_FORWARDED_PROTO](https://docs.djangoproject.com/en/3.2/ref/settings/#secure-proxy-ssl-header) _(type: string, default: "https")_
+* [DJANGO_SECURE_SSL_REDIRECT](https://docs.djangoproject.com/en/3.2/ref/settings/#secure-ssl-redirect) _(type: boolean, default: True)_
+* [DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS](https://docs.djangoproject.com/en/3.2/ref/settings/#secure-hsts-include-subdomains) _(type: boolean, default: True)_
+* [DJANGO_SECURE_HSTS_PRELOAD](https://docs.djangoproject.com/en/3.2/ref/settings/#std:setting-SECURE_HSTS_PRELOAD) _(type: boolean, default: True)_
+* [DJANGO_SECURE_CONTENT_TYPE_NOSNIFF](https://docs.djangoproject.com/en/3.2/ref/settings/#secure-content-type-nosniff) _(type: boolean, default: True)_
 
 ## Deploy in development
 In order to deploy the application with docker, you need to build the development images, and run the containers with docker-compose, just run:
