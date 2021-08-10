@@ -8,6 +8,6 @@ from . import views
 app_name = "users"
 
 urlpatterns = [
-    path("login/", TokenObtainPairView.as_view()),
-    path("me/", views.UserAPIView.as_view()),
+    path("login/", TokenObtainPairView.as_view(), name="login"),
+    path("me/", views.UserAPIView.as_view(), name="me"),
 ]

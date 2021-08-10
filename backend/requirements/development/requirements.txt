@@ -6,22 +6,120 @@
 #
 asgiref==3.4.1
     # via django
+attrs==21.2.0
+    # via pytest
+backcall==0.2.0
+    # via ipython
+certifi==2021.5.30
+    # via requests
+charset-normalizer==2.0.4
+    # via requests
+coverage==5.5
+    # via pytest-cov
+decorator==5.0.9
+    # via ipython
 django==3.2.4
     # via
     #   -r requirements.in
+    #   django-extensions
+    #   django-mock-queries
     #   djangorestframework
     #   djangorestframework-simplejwt
+    #   model-bakery
 django-environ==0.4.5
+    # via -r requirements.in
+django-extensions==3.1.3
+    # via -r requirements.in
+django-mock-queries==2.1.6
     # via -r requirements.in
 djangorestframework==3.12.4
     # via
     #   -r requirements.in
+    #   django-mock-queries
     #   djangorestframework-simplejwt
 djangorestframework-simplejwt==4.7.2
     # via -r requirements.in
+faker==8.11.0
+    # via mixer
+idna==3.2
+    # via requests
+iniconfig==1.1.1
+    # via pytest
+ipython==7.26.0
+    # via -r requirements.in
+ipython-genutils==0.2.0
+    # via traitlets
+jedi==0.18.0
+    # via ipython
+matplotlib-inline==0.1.2
+    # via ipython
+mixer==7.1.2
+    # via -r requirements.in
+mock==4.0.3
+    # via django-mock-queries
+model-bakery==1.1.1
+    # via django-mock-queries
+packaging==21.0
+    # via pytest
+parso==0.8.2
+    # via jedi
+pexpect==4.8.0
+    # via ipython
+pickleshare==0.7.5
+    # via ipython
+pluggy==0.13.1
+    # via pytest
+prompt-toolkit==3.0.19
+    # via ipython
+ptyprocess==0.7.0
+    # via pexpect
+py==1.10.0
+    # via pytest
+pygments==2.9.0
+    # via ipython
 pyjwt==2.1.0
     # via djangorestframework-simplejwt
+pyparsing==2.4.7
+    # via packaging
+pytest==6.2.4
+    # via
+    #   pytest-cov
+    #   pytest-django
+    #   pytest-mock
+pytest-cov==2.12.1
+    # via -r requirements.in
+pytest-django==4.4.0
+    # via -r requirements.in
+pytest-mock==3.6.1
+    # via -r requirements.in
+python-dateutil==2.8.2
+    # via faker
 pytz==2021.1
     # via django
+requests==2.26.0
+    # via requests-mock
+requests-mock==1.9.3
+    # via -r requirements.in
+six==1.16.0
+    # via
+    #   python-dateutil
+    #   requests-mock
 sqlparse==0.4.1
     # via django
+text-unidecode==1.3
+    # via faker
+toml==0.10.2
+    # via
+    #   pytest
+    #   pytest-cov
+traitlets==5.0.5
+    # via
+    #   ipython
+    #   matplotlib-inline
+urllib3==1.26.6
+    # via requests
+wcwidth==0.2.5
+    # via prompt-toolkit
+
+# The following packages are considered to be unsafe in a requirements file:
+# setuptools
